@@ -7,21 +7,70 @@
     <title>quize</title>
 </head>
 <body>
-    <div class="app">
-        <h1> quize</h1>
-        <div class="quize">
-            <h2 id="question">
-                question are here
-            </h2>
-            <div id="answer-button">
-                <button class="btn">Answer 1</button>
-                <button class="btn">Answer 2</button>
-                <button class="btn">Answer 3</button>
-                <button class="btn">Answer 4</button>
-            </div>
+       <div class="app">
+        <!-- Welcome Screen -->
+        <div class="welcome-screen" id="welcome-screen">
+            <h2>Welcome to Quiz Master!</h2>
+            <p>Test your knowledge with our interactive quiz. Select a category and difficulty level to begin.</p>
+            <button id="start-button">Get Started</button>
+        </div>
 
+        <!-- Category Selection Screen -->
+        <div class="category-screen" id="category-screen" style="display: none;">
+            <h2>Select Quiz Options</h2>
+            
+            <div class="category-selector">
+                <select id="category-select">
+                    <option value="general">General Knowledge</option>
+                    <option value="geography">Geography</option>
+                    <option value="history">History</option>
+                    <option value="science">Science</option>
+                </select>
+            </div>
+            
+            <div class="difficulty-selector">
+                <div class="difficulty-btn active" data-difficulty="easy">Easy</div>
+                <div class="difficulty-btn" data-difficulty="medium">Medium</div>
+                <div class="difficulty-btn" data-difficulty="hard">Hard</div>
+            </div>
+            
+            <button id="start-quiz-button">Start Quiz</button>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" style="display: none;">
+            <div class="app-header">
+                <h1>Quiz Master</h1>
+                <div class="score-container">Score: <span id="score">0</span></div>
+            </div>
+            
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+            
+            <div class="timer" id="timer">Time: 30s</div>
+            
+            <div class="quize">
+                <h2 id="question">Question goes here</h2>
+                <div id="answer-buttons">
+                    <!-- Answer buttons will be generated here -->
+                </div>
+                
+                <div class="feedback" id="feedback"></div>
+                
+                <div class="controls">
+                    <button id="next-button">Next</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div class="results" id="results-screen">
+            <h2>Quiz Completed!</h2>
+            <p>Your final score: <span id="final-score">0</span> out of <span id="total-questions">0</span></p>
+            <button id="restart-button">Play Again</button>
         </div>
     </div>
-    
+    <script src="script.js"></script>
 </body>
 </html>
